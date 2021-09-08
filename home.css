@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -12,14 +16,28 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: radial-gradient(#ddd, rgb(161, 161, 161)); 
 }
 
-.background-color-sect {
+.background-video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 
+
+a {
+    text-decoration: none;
+}
+
+/* .background-color-sect {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: 85px 170px 136vh;
+    grid-template-rows: 85px 200px 75vh;
 }
 
 .background-1 {
@@ -29,12 +47,15 @@ body {
 
 .background-2 {
     background: white;
-    height: 170px;
+    height: 180px;
+    border-top: 3px solid black;
 }
 
 .background-3 {
-    background: radial-gradient(#ddd, rgb(161, 161, 161));
-}
+    background-color: #dddddd00;
+    height: 75vh;
+} */
+
 
 
 
@@ -48,12 +69,14 @@ body {
     transition: all .5s ease, width 0s, height 0s;
     margin-bottom: 2vh;
     z-index: 2;
+    /* border-bottom: 2px solid black; */
+    border-bottom: 2px solid #f0f4f5;
 }
 
 .display-filler {
     width: 100%;
     height: 100%;
-    background: radial-gradient(#4a568b, #2b3972);
+    background-color: #f0f4f570;
     background-position: center center;
     background-size: cover;
 }
@@ -72,47 +95,62 @@ body {
 
 .logo {
     background-color: #33333300;
-    margin-left: clamp(5px, 2vw, 8px);
+    /* margin-left: clamp(5px, 2vw, 8px); */
+    margin-left: clamp(2px, 0.5vw, 8px);
     width: 15vw;
     height: 100%;
+    opacity: 1;
 }
 
 .logo-text {
-    color: goldenrod;
+    /* color: goldenrod; */
+    color: black;
     font-weight: bolder;
     font-family: 'Overpass', sans-serif;
-    text-shadow: 2px 2px 4px black;
-    /* margin-left: clamp(10px, 17vw, 200px);
-    font-size: clamp(45px, 7.5vw, 90px); */
+    text-shadow: .5px .5px 1px white;
     margin-left: clamp(5px, 8vw, 100px);
-    font-size: clamp(20px, 9vw, 45px);
+    font-size: clamp(20px, 9vw, 60px);
     height: 100%;
     display: flex;
     align-items: center;
+    opacity: 1;
 }
 
 .logo-pic {
     width: 100%;
     height: 100%;
-    background: url('./logo-imgs-sans-bg/logo-sans-backdrop.gif');
+    background: url('./logo-imgs-sans-bg/all-black-logo.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    -webkit-filter: drop-shadow(4px 4px 4px black);
-    filter: drop-shadow(4px 4px 4px black);
+    -webkit-filter: drop-shadow(2px 2px 2px black);
+    filter: drop-shadow(2px 2px 2px black);
+    opacity: 1;
 }
-
-
 
 
 /* --- The outer-most grid container --- */
 
   /* Pretransition */
-.papa-grid {
+  .papa-grid {
     display: grid;
     position: absolute;
     top: 0px;
-    grid-template-rows: 85px 1fr 1fr 1fr 6.5fr;
+    grid-template-rows: 85px 1fr 1fr 1fr 6.5fr 1fr;
+    gap: 0%;
+    align-items: center;
+    justify-content: center;
+    width: 85vw;
+    height: 100vh;
+    transition: all .5s ease;
+}
+
+    /* transition-1 */
+.papa-grid.transition1 {
+    display: grid;
+    position: absolute;
+    top: 0px;
+    grid-template-rows: 85px 1fr 1fr 1fr 6.5fr 1fr;
     gap: 0%;
     align-items: center;
     justify-content: center;
@@ -120,27 +158,11 @@ body {
     height: 100vh;
 }
 
-    /* Post-transition */
-.papa-grid.transition {
-    display: grid;
-    position: absolute;
-    top: 0px;
-    grid-template-rows: 85px 1fr 1fr 1fr 6.5fr;
-    gap: 0%;
-    align-items: center;
-    justify-content: center;
-    width: 85vw;
-    height: 100vh;
-}
-
-
-
+/* --- ---- */
 
 .row {
     margin: 0;
 }
-
-
 
 
 
@@ -149,8 +171,7 @@ body {
     width: 100vw;
     height: 85px;
 }
-
-
+/* --------  -------- */
 
 
 /* --- Grid Sect 2 --- */
@@ -162,11 +183,12 @@ body {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
+    margin-bottom: 3vh;
 
 }
 
 .flight-form {
-    font-size: 1.2rem;
+    font-size: clamp(10px, 4vw, 20px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -179,6 +201,7 @@ body {
 }
 
 label {
+    font-size: clamp(10px, 4vw, 20px);
     margin-right: 1vw;
     color: black;
     font-family: 'Overpass', sans-serif;
@@ -186,10 +209,16 @@ label {
 }
 
 #airport-city-name {
+    width: clamp(20px, 100%, 500px);
     font-size: 1.2rem;
-    background-color: #ddd;
+    background-color: #f0f4f580;
     font-family: 'Overpass', sans-serif;
     font-weight: bolder;
+    border: 2px solid #f0f4f590;
+}
+
+#airport-city-name:focus {
+    background-color: #f0f4f5;
 }
 
 #travel-date {
@@ -197,10 +226,16 @@ label {
     font-size: 1.2rem;
     font-family: 'Overpass', sans-serif;
     cursor: pointer;
-    background-color: #ddd;
+    background-color: #f0f4f580;
     padding-left: 5px;
+    border: 2px solid #f0f4f590;
 }
 
+#travel-date:focus {
+    background-color: #f0f4f5;
+}
+
+/* ------- ------- */
 
 
 
@@ -212,43 +247,78 @@ label {
     height: 0px;
 }
 
-/* post-transition compress-container: height should be what menu-parent usually is */
+    /* transition-1 compress-container: height should be what menu-parent usually is */
 
-.compressable-container.transition {
+.compressable-container.transition1 {
     width: 85vw;
-    height: clamp(70px, 15vh, 120px);
+    height: 85px;
 }
 
+/* ------   ------- */
 
 
 
-
-/* --- Grid Sect 4 --- */
-/*This one doesn't have a width.  Maybe try making only the outer elements have a width*/
+/* // ----- Grid Sect 4 ----- // */
 
 
+    /* --- .MENU-CONTAINER --- */
 
-    /* Pre-transition menu */
-
+/* --- ,menu-container No-transition --- */
 .menu-container {
     display: grid;
     justify-content: center;
     align-items: center;
-    margin-bottom: clamp(50px, 10vh, 50px);
-    margin-top: .5vh;
+    width: 100vw;
+    height: 85px;
+    position: relative;
+    z-index: 10;
+}
 
 
-    justify-self: flex-end;
+.menu-container.transition1:hover {
+    cursor: pointer;
+}
+
+/* --- .menu-container Transition-1 --- */
+.menu-container.transition1 {
+    /* justify-self: flex-end;
     border: 3px solid maroon;
     border-radius: 12px;
     position: relative;
-    transform: rotate(90deg);
     top: -87px;
     z-index: 7;
     width: clamp(30px, 14vw, 65px);
-    height: clamp( 30px, 18vh, 75px);
+    height: clamp( 30px, 18vh, 75px); */
+    /* width: clamp(50px, 10vw, 62px);
+    height: clamp( 55px, 10.5vh, 68px); */
+    /* ****
+    **** */
+    justify-content: flex-end;
 }
 
+
+/* --- .menu-container Transition-2 --- */
+
+.menu-container.transition1 {
+    position: fixed;
+    left: 0px;
+}
+
+/* --- .menu-container Transition-3 --- */
+
+.menu-container {
+
+}
+
+
+    /* --- .MENU-DIV --- */
+
+/* --- ,menu-div No-transition --- */
+/* @keyframes spin {
+    to {
+        transform: rotateZ(90deg);
+    }
+} */
 
 .menu-div {
     width: 85vw;
@@ -258,102 +328,107 @@ label {
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 5%;
-    transform: rotate(0deg);
-    transition: width .5s, height .5s, display .5s ease, border .5s ease, transform .5s ease, margin-top .5s ease, margin-left .5s ease;
-
-    width: clamp(30px, 10vw, 65px);
-    height: clamp( 30px, 10vh, 65px);
+    will-change: transform; /*will-change here*/
+    /* transform: rotate(0deg); */
+    /* -webkit-transform: rotate(0deg); */
+    transition: width .5s ease, height .5s ease, align-items .5s ease, justify-content .5s ease, gap .5s ease, transform .5s ease;
 }
 
+/* --- .menu-div Transition-1 --- */
+.menu-div.transition1 {
+    border: 2px solid black;
+    width: clamp(20px, 10.5vw, 62px);
+    height: clamp(55px, 10vh, 67px);
+    border-radius: 12px;
+    /* animation: .5s spin linear; */
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    margin-right: 20px;
+
+    margin-right: clamp(12px, 3vw, 40px);
+    justify-self: flex-end;
+    gap: 0vh;
+    /* -webkit-filter: none;
+    filter: none; */
+}
+
+.menu-div.transition1:hover {
+    /* border: 2px solid #f0f4f5; */
+    transition: hover .3s ease;
+    /* width: clamp(50px, 10.2vw, 70px); */
+    height: clamp( 55px, 10.8vh, 72px);
+}
+
+/* --- .menu-div Transition-2 --- */
+
+.menu-div {
+
+}
+
+/* --- .menu-div Transition-3 --- */
+
+.menu-div {
+
+}
+
+    /* --- .MENU-OP --- */
+
+/* --- ,menu-op No-transition --- */
 .menu-op {
     border-radius: 6px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: clamp(10px, 4.2vw, 30px);
     height: clamp(70px, 10vh, 120px);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
-    transition: all .3s ease, text-align .3s ease, font-size .3s ease, margin .3s ease, width .3s ease, background-color .3s ease;
-    background-color: goldenrod;
+    /* border: 1px solid black; */
+    border: 1px solid #f0f4f590;
+    background-color: #f0f4f580;
     text-shadow: none;
-    color: white;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-weight: bolder;
     font-family: 'Overpass', sans-serif;
-
-
-    font-size: 0;
-    width: 0px;
-    height: 8vh;
-    border: 1px solid black;
-    margin-left: 7px;
+    will-change: contents; /*will-change here*/
+    transition: border-color .5s ease, font-size .5s, width .4s ease, height .4s ease, left .5s ease, z-index .5s ease;
+    /* transition: all .5s ease, hover .25s ease; */
 }
 
 .menu-op:hover {
     cursor: pointer;
-    color: white;
-    background-color: #303f80;
-    text-shadow: 1px 1px 2px black;
+    color: black;
+    background-color: #f0f4f5;
+    /* text-shadow: 1px 1px 2px white; */
 }
 
-
-    /* Post-transition menu -- included transitioned .papa-grid  */
-
-.menu-container.transition {
-    position: fixed;
-    /* left: 85vw; */
-    min-width: 50px; 
-    min-height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin-bottom: clamp(50px, 10vh, 50px); */
-    /* z-index: 5; */
-    border-radius: 8px;
-    border: 3px solid black;
-    /* transform: rotate(90deg); */
-}
-
-.menu-container.transition:hover {
-    cursor: pointer;
-}
-
-.menu-div.transition {
-    width: 8vw;
-    min-width: 50px;
-    max-width: 55px;
-    height: 10vh;
-    min-height: 70px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5%;
-    /* transition: width 0s, height 0s, display .5s ease, border .5s ease, transform .5s ease, margin-top .5s ease, margin-left .5s ease; */
-    border-radius: 8px;
-}
-
-.menu-op.transition {
-    /* border-radius: 6px;
-    text-align: center; */
-    font-size: 0em;
-    height: clamp(50px, 8vh, 120px);
+/* --- .menu-op Transition-1 --- */
+.menu-op.transition1 {
+    border: 1px solid #111;
+    font-size: 0px;
     width: 0px;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    border: 1px solid black;
-    /* transition: all .3s ease, text-align .3s ease, font-size .3s ease, margin .3s ease, width .3s ease, background-color .3s ease;
-    text-shadow: none; */
-    background-color: #222;
-    margin-left: 4px;
-    /* color: white;
-    font-weight: bolder;
-    font-family: 'Overpass', sans-serif; */
+    height: clamp(15px,10vw, 43px);
+    position: relative;
+    left: clamp(2px, .90vw, 8px);
+    z-index: 10;
 }
 
-/* --------  End of Grid Sect 4  ------- */
+
+/* --- .menu-op Transition-2 --- */
+
+.menu-op {
+
+}
+
+/* --- .menu-op Transition-3 --- */
+
+.menu-op {
+
+}
+
+/* // ----------- ----------- // */
 
 
 
@@ -371,6 +446,13 @@ label {
     height: auto;
     width: 85vw;
     border-radius: 8px;
+    margin-top: 10vh;
+}
+
+.main-container.transition1 {
+    /* somehow, i think the position: relative below affected the menu-transition1 so that it stays centered instead of flex-end */
+    /* position: relative;  
+    top: -10vh; */
 }
 
 .feature {
@@ -379,18 +461,22 @@ label {
     font-size: 2.5rem;
     border-radius: 8px;
     border: 3px solid #111;
+    /* border: 3px solid #f0f4f5; */
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: .94;
-    -webkit-filter: drop-shadow(4px 4px 4px black);
-    filter: drop-shadow(4px 4px 4px black);
+    -webkit-filter: drop-shadow(1px 1px 1px black);
+    filter: drop-shadow(1px 1px 1px black);
 }
 
 .feature:hover {
-    border: 3px solid black;
+    border: 3px solid #f0f4f5;
+    /* border: 3px solid black; */
     cursor: pointer;
     opacity: 1;
+    -webkit-filter: drop-shadow(2px 2px 2px black);
+    filter: drop-shadow(2px 2px 2px black);
 }
 
 .box-1a.box-2b.box-3c {
@@ -482,12 +568,192 @@ label {
 
 
 
+
 /* // ----- footer ----- // */
 
 .footer {
-    width: 100%;
-    height: 100px;
+    width: 100vw;
+    height: 150px;
+    /* background: radial-gradient(#f0f4f5, #e3e6e7); */
+    background: radial-gradient(#f0f4f580, #edf1f180);
     display: flex;
+    /* gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 2fr 1fr; */
     flex-direction: column;
-    border: 3px solid green;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.footer-sect {
+    width: 100%;
+    height: 45px;
+}
+
+.icon-section {
+    margin-top: 10px;
+    margin-bottom: 7px;
+    height: 40px;
+    display: flex; 
+    justify-content: center;
+}
+
+.social-media-icons {
+    width: 80%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-parent {
+    width: 10vw;
+    min-width: 35px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+}
+
+.icon {
+
+    width: clamp(10px, 8vw, 30px);
+    height: clamp(10px, 8vw, 30px);
+    background-size: cover;
+    border-radius: 6px;
+    transition: all .2s ease;
+}
+
+.icon1 {
+    background-image: url('./icons/sky-blue-linkedin-icon.png');
+    opacity: 1;
+}
+
+.icon1:hover {
+    background-image: url('./icons/linkedin-black-icon.png');
+    opacity: 1;
+    background-color: white;
+    cursor: pointer;
+}
+
+.icon2 {
+    background-image: url('./icons/github-sky-blue-icon.png');
+    opacity: 1;
+}
+
+.icon2:hover {
+    background-image: url('./icons/github-black-icon.png');
+    background-color: white;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.icon3 {
+    background-image: url('./icons/instagram-sky-blue-icon.png');
+    opacity: 1;
+}
+
+.icon3:hover {
+    background-image: url('./icons/instagram-black-icon.png');
+    background-color: white;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.icon4 {
+    background-image: url('./icons/twitter-sky-blue-icon.png');
+    opacity: 1;
+}
+
+.icon4:hover {
+    background-image: url('./icons/twitter-black-icon.png');
+    background-color: white;
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+
+.footer-menu-container {
+    width: auto;
+    min-width: 70vw;
+    height: 40px;
+    display: grid;
+    grid-row-gap: 2px;
+    /* grid-template-rows: 1fr; */
+    grid-template-columns: 1fr 1fr 1fr 1fr auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-menu-op {
+    width: clamp(50px, 10vw, 150px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(8px, 3.2vw, 20px);
+    font-family: 'Overpass', sans-serif;
+    font-weight: bolder;
+    color: #151515;
+    transition: all .2s ease, text-decoration .2s ease;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.footer-menu-op:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+    color: black;
+    transition: all .2s ease, text-decoration .2s ease;
+    cursor: pointer;
+}
+
+.footer-op-5 {
+    width: clamp(40px, 20vw, 150px)
+}
+
+.copyright-div {
+    height: 20px;
+    font-size: clamp(7px, 2.2vw, 14px);
+    font-family: 'Overpass', sans-serif;
+    font-weight: bolder;
+    color: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* // ----- end-footer ----- // */
+
+.back-to-top {
+    width: clamp(20px, 8.8vw, 50px);
+    height: clamp(20px, 8.8vw, 50px);
+    position: fixed;
+    background: #00000000;
+    background-size: cover;
+    top: 86vh;
+    left: 89vw;
+    display: none;
+    -webkit-filter: drop-shadow(1px 1px 1px black);
+    filter: drop-shadow(1px 1px 1px black);
+}
+
+.back-to-top.transition1 {
+    background: url('./icons/cloud-white-up-arrow-icon.png');
+    background-size: cover;
+    display: block;
+    transition: all .1s ease;
+}
+
+.back-to-top.transition1:hover{
+    background: url('./icons/black-up-arrow-icon.png');
+    background-size: cover;
+    cursor: pointer;
+    -webkit-filter: drop-shadow(1px 1px 1px #f0f4f5);
+    filter: drop-shadow(1px 1px 1px #f0f4f5);
 }
