@@ -14,6 +14,7 @@ let compressableContainer = document.querySelector('.compressable-container');
 let formContainer = document.querySelector('.form-container');
 
 let menuContainer = document.querySelector('.menu-container');
+let menuCover = document.querySelector('.menu-cover');
 let menuDiv = document.querySelector('.menu-div');
 let menuOp = document.querySelectorAll('.menu-op')
 
@@ -95,15 +96,47 @@ window.addEventListener('resize', function(event){
 
 
 
+// var offsetStart = 0;
+// var offsetEnd = 0;
+
+// window.addEventListener('scroll', () => {
+//   document.documentElement.style.setProperty('--scroll', ( window.pageYOffset - offsetStart ) / ( document.body.offsetHeight - offsetStart - offsetEnd - window.innerHeight ));
+// }, false);
+
+
+/* --- The following code is meant to slowly change the opacity based on how far down the page one has scrolled.*/
+
+// The range seems to be from 15px to 90px, a span of 75
+// window.addEventListener("scroll", opaqueScroller);
+
+// let menuOpacity = menuContainer.style.backgroundColor;
+
+// function opaqueScroller() {
+//     if (window.scrollY > 15) {
+
+//         let x = window.scrollY + (window.scrollY * 1.5 / 100)
+//         menuOpacity = `rgb(240, 244, 245, ${x})`
+
+//     }
+// }
+
+
+
+/* -- Scroll position gague */ 
+window.addEventListener('scroll', function(){
+    console.log(`The ScrollY position is ${window.scrollY}`);
+    console.log(`${window.scrollY*1.5}`)
+})
+
+
 
 
 //The code below is to change the background-color opacity at a certain scroll point
 
-
 window.addEventListener("scroll", function(){
     if(formContainer.getBoundingClientRect().bottom > 50) {
         
-        displayFiller.style.backgroundColor= "#f0f4f570";
+        displayFiller.style.backgroundColor = "rgb(240, 244, 245, .5)"; //or #f0f4f575
         topDisplay.style.borderBottom = "2px solid #f0f4f5";
         topDisplay.style.transition = "all .2s ease"
     }
@@ -113,7 +146,7 @@ window.addEventListener("scroll", function(){
 window.addEventListener("scroll", function(){
     if(formContainer.getBoundingClientRect().bottom <= 50) {
 
-        displayFiller.style.backgroundColor = "#f0f4f5";
+        displayFiller.style.backgroundColor = "rgb(240, 244, 245, 1.0)"; //or #f0f4f5ff
         topDisplay.style.transition = "all .2s ease"
     }
 
@@ -142,6 +175,8 @@ window.addEventListener("scroll", function(){
             compressableContainer.classList.toggle('transition1');
     
             menuContainer.classList.toggle('transition1');
+
+            menuCover.classList.toggle('transition1');
     
             menuDiv.classList.toggle('transition1');
             
@@ -190,6 +225,8 @@ window.addEventListener("scroll", function(){
             compressableContainer.classList.toggle('transition1');
     
             menuContainer.classList.toggle('transition1');
+
+            menuCover.classList.toggle('transition1');
     
             menuDiv.classList.toggle('transition1');
             
@@ -217,3 +254,12 @@ window.addEventListener("scroll", function(){
     
 });
 
+
+menuCover.addEventListener("click", scrollToTop);
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
