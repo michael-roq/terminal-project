@@ -41,48 +41,48 @@ displayFiller.style.transition = "background-color .5s ease";
 
 // The code below is meant to adjust the grid layout based on the immidiate inner width of the window upon loading.
 
-if (window.innerWidth < 1100 && window.innerWidth >= 650) {
-    mainContainer.style.gridTemplateColumns = "1fr 1fr";
-    mainContainer.style.gridTemplateRows = "1fr 1fr";
-    footer.style.marginTop = '10vh';
-}
+// if (window.innerWidth < 1100 && window.innerWidth >= 650) {
+//     mainContainer.style.gridTemplateColumns = "1fr 1fr";
+//     mainContainer.style.gridTemplateRows = "1fr 1fr";
+//     footer.style.marginTop = '10vh';
+// }
 
-if (window.innerWidth < 650) {
-    mainContainer.style.gridTemplateColumns = "1fr";
-    mainContainer.style.gridTemplateRows = "1fr 1fr 1fr 1fr"
-    footer.style.marginTop = '30vh';
-} 
+// if (window.innerWidth < 650) {
+//     mainContainer.style.gridTemplateColumns = "1fr";
+//     mainContainer.style.gridTemplateRows = "1fr 1fr 1fr 1fr"
+//     footer.style.marginTop = '30vh';
+// } 
 
 // The code below is meant to adjust the grid layout based listening for changes in window size.
 
-window.addEventListener('resize', function(event){
+// window.addEventListener('resize', function(event){
 
-    if (window.innerWidth > 1100) {
-        mainContainer.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
-        mainContainer.style.gridTemplateRows = "1fr"
-        footer.style.marginTop = '10vh';
+//     if (window.innerWidth > 1100) {
+//         mainContainer.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+//         mainContainer.style.gridTemplateRows = "1fr"
+//         footer.style.marginTop = '10vh';
         
 
-    }
-    if (window.innerWidth < 1100 && window.innerWidth >= 650) {
-        mainContainer.style.gridTemplateColumns = "1fr 1fr";
-        mainContainer.style.gridTemplateRows = "1fr 1fr"
-        footer.style.marginTop = '10vh';
+//     }
+//     if (window.innerWidth < 1100 && window.innerWidth >= 650) {
+//         mainContainer.style.gridTemplateColumns = "1fr 1fr";
+//         mainContainer.style.gridTemplateRows = "1fr 1fr"
+//         footer.style.marginTop = '10vh';
        
 
-    }
-    if (window.innerWidth < 650) {
-        mainContainer.style.gridTemplateColumns = "1fr";
-        mainContainer.style.gridTemplateRows = "1fr 1fr 1fr 1fr"
-        footer.style.marginTop = '30vh';
+//     }
+//     if (window.innerWidth < 650) {
+//         mainContainer.style.gridTemplateColumns = "1fr";
+//         mainContainer.style.gridTemplateRows = "1fr 1fr 1fr 1fr"
+//         footer.style.marginTop = '30vh';
         
 
-        /* menuContainer toggle */
+//         /* menuContainer toggle */
 
-        /* menuDiv toggle */
+//         /* menuDiv toggle */
 
-    }; 
-});
+//     }; 
+// });
 
 
 window.addEventListener('resize', function(event){
