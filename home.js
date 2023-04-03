@@ -4,8 +4,6 @@ let logoParent = document.querySelector('.logo-parent');
 let logoPic = document.querySelector('.logo-pic');
 let logoText = document.querySelector('.logo-text');
 
-// let backgroundColorSection = document.querySelector('.background-color-sect');
-// let background3 = document.querySelector('.background-3');
 
 let papaGrid = document.querySelector('.papa-grid');
 
@@ -29,60 +27,9 @@ let backToTop = document.querySelector('.back-to-top');
 
 
 
-// logoPic.style.opacity = '1';
-// logoText.style.opacity = '1';
-
-// displayFiller.style.backgroundColor = "#f0f4f570";
 displayFiller.style.backgroundColor = "#f0f4f570";
 displayFiller.style.transition = "background-color .5s ease";
 
-
-
-
-// The code below is meant to adjust the grid layout based on the immidiate inner width of the window upon loading.
-
-// if (window.innerWidth < 1100 && window.innerWidth >= 650) {
-//     mainContainer.style.gridTemplateColumns = "1fr 1fr";
-//     mainContainer.style.gridTemplateRows = "1fr 1fr";
-//     footer.style.marginTop = '10vh';
-// }
-
-// if (window.innerWidth < 650) {
-//     mainContainer.style.gridTemplateColumns = "1fr";
-//     mainContainer.style.gridTemplateRows = "1fr 1fr 1fr 1fr"
-//     footer.style.marginTop = '30vh';
-// } 
-
-// The code below is meant to adjust the grid layout based listening for changes in window size.
-
-// window.addEventListener('resize', function(event){
-
-//     if (window.innerWidth > 1100) {
-//         mainContainer.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
-//         mainContainer.style.gridTemplateRows = "1fr"
-//         footer.style.marginTop = '10vh';
-        
-
-//     }
-//     if (window.innerWidth < 1100 && window.innerWidth >= 650) {
-//         mainContainer.style.gridTemplateColumns = "1fr 1fr";
-//         mainContainer.style.gridTemplateRows = "1fr 1fr"
-//         footer.style.marginTop = '10vh';
-       
-
-//     }
-//     if (window.innerWidth < 650) {
-//         mainContainer.style.gridTemplateColumns = "1fr";
-//         mainContainer.style.gridTemplateRows = "1fr 1fr 1fr 1fr"
-//         footer.style.marginTop = '30vh';
-        
-
-//         /* menuContainer toggle */
-
-//         /* menuDiv toggle */
-
-//     }; 
-// });
 
 
 window.addEventListener('resize', function(event){
@@ -95,30 +42,6 @@ window.addEventListener('resize', function(event){
 });
 
 
-
-// var offsetStart = 0;
-// var offsetEnd = 0;
-
-// window.addEventListener('scroll', () => {
-//   document.documentElement.style.setProperty('--scroll', ( window.pageYOffset - offsetStart ) / ( document.body.offsetHeight - offsetStart - offsetEnd - window.innerHeight ));
-// }, false);
-
-
-/* --- The following code is meant to slowly change the opacity based on how far down the page one has scrolled.*/
-
-// The range seems to be from 15px to 90px, a span of 75
-// window.addEventListener("scroll", opaqueScroller);
-
-// let menuOpacity = menuContainer.style.backgroundColor;
-
-// function opaqueScroller() {
-//     if (window.scrollY > 15) {
-
-//         let x = window.scrollY + (window.scrollY * 1.5 / 100)
-//         menuOpacity = `rgb(240, 244, 245, ${x})`
-
-//     }
-// }
 
 
 
@@ -152,11 +75,6 @@ window.addEventListener("scroll", function(){
 
 })
 
-
-// The code below is to change the menu options into a hamburger menu.
-
-/* I will need to make it so that the code below is set to change when
-the window scrolls past a certain point instead of "resize"*/
 
 window.addEventListener("scroll", function(){
 
@@ -203,15 +121,7 @@ window.addEventListener("scroll", function(){
     };
 });
 
-// I must remember that, when adding keys and values to an object, if I am using dot notation, i need only write the name of the variable being run through.
-// But if I am adding keys and values to an object and am using BRACKET notation, I must put the variable in quotations.  If the object is not a string already, then I must put it in backticks with the ${} used to go around the variable name.
 
-
-/* Once again, I will need to make this code change when it scrolls back
-up past a certain point.
-Furthermore, I want to set it so that clicking the menu bar sends it back
-up to the top and opens the menu.
-Later, I might have to make the 'open' transition as well.  Ugh.  lol  */
 
 
 window.addEventListener("scroll", function(){
@@ -236,15 +146,6 @@ window.addEventListener("scroll", function(){
             }
 
             mainContainer.classList.toggle('transition1');
-            
-            // papaGrid.style.transition = 'all .5s ease';
-            // compressableContainer.transition = 'all .5s ease';
-            // menuContainer.transition = 'all .5s ease';
-            // menuDiv.style.transition = 'all .5s ease, background-color .2s ease';
-            // for(let j = 0; j < menuOp.length; j++) {
-
-            //     menuOp[j].style.transition = 'all .5s ease, background-color .2s ease'
-            // }
             
             menuContainer.style.transition = 'all .5s ease';
 
